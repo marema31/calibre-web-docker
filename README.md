@@ -18,23 +18,18 @@ Several docker images exists for this application, but they rely on a complex st
 
 ## Other Docker Images
 
-Pre-built Docker images are available in these Docker Hub repositories:
+More complete Pre-built Docker images are available in these Docker Hub repositories:
 
 #### **Technosoft2000 - x64**
 + Docker Hub - [https://hub.docker.com/r/technosoft2000/calibre-web/](https://hub.docker.com/r/technosoft2000/calibre-web/)
 + Github - [https://github.com/Technosoft2000/docker-calibre-web](https://github.com/Technosoft2000/docker-calibre-web) 
 
-    Includes the Calibre `ebook-convert` binary.
-    + The "path to convertertool" should be set to `/opt/calibre/ebook-convert`
-
+ 
 #### **LinuxServer - x64, armhf, aarch64**
 + Docker Hub - [https://hub.docker.com/r/linuxserver/calibre-web/](https://hub.docker.com/r/linuxserver/calibre-web/)
 + Github - [https://github.com/linuxserver/docker-calibre-web](https://github.com/linuxserver/docker-calibre-web)
 + Github - (Optional Calibre layer) - [https://github.com/linuxserver/docker-calibre-web/tree/calibre](https://github.com/linuxserver/docker-calibre-web/tree/calibre) 
 
-   This image has the option to pull in an extra docker manifest layer to include the Calibre `ebook-convert` binary.  Just include the environmental variable `DOCKER_MODS=linuxserver/calibre-web:calibre` in your docker run/docker compose file. **(x64 only)**
-  
-   If you do not need this functionality then this can be omitted, keeping the image as lightweight as possible.
     
    Both the Calibre-Web and Calibre-Mod images are rebuilt automatically on new releases of Calibre-Web and Calibre respectively, and on updates to any included base image packages on a weekly basis if required.
    + The "path to convertertool" should be set to `/usr/bin/ebook-convert`
