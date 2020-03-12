@@ -9,7 +9,7 @@ Several docker images exists for this application, but they rely on a complex st
 ## Quick start
 
 1. Create a folder that will store the configuration databases of calibre-web, at first run the image will populate it with default databases
-2. Run the container `docker run --rm -d -v /local/path/to/calibre-web/config:/config -v /local/path/to/calibre/library:/books -p 8080:8083 -e PUSER=$(id -u) -e PGROUP=$(id -g) marema31/calibre-web`.
+2. Run the container `docker run --rm -d -v /local/path/to/calibre-web/config:/config -v /local/path/to/calibre/library:/books -p 8080:8083 -e PUSER=$(id -u) -e PGROUP=$(id -g) -e CONTAINER_TIMEZONE="Europe/Paris" marema31/calibre-web`.
 1. Point your browser to `http://localhost:8083` or `http://localhost:8083/opds` for the OPDS catalog
 
 **Default admin login:**\
