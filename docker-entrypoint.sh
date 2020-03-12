@@ -24,12 +24,12 @@ then
   exit 1
 fi
 
-if [[ ! -r /config/app.db ]]
+if [[ ! -f /config/app.db ]]
 then
   echo "Initialize application configuration"
   cp /calibre-web/dockerinit/app.db /config/app.db
 fi
-if [[ ! -r /config/gdrive.db ]]
+if [[ ! -f /config/gdrive.db ]]
 then
   echo "Initialize gdrive configuration"
   cp /calibre-web/dockerinit/gdrive.db /config/gdrive.db
@@ -42,16 +42,25 @@ then
   exit 1
 fi
 
-if [[ ! -r /books/metadata.db ]]
+if [[ ! -f /books/metadata.db ]]
 then
   echo "Initialize Library"
   cp /calibre-web/dockerinit/metadata.db /books/metadata.db
+fi
+
+if [[ ! -r /books/metadata.db ]]
+then
   chown "$PUSER:$PGROUP" /books/metadata.db
 fi
-if [[ ! -r /books/metadata_db_prefs_backup.json ]]
+
+if [[ ! -f /books/metadata_db_prefs_backup.json ]]
 then
   echo "Initialize Library configuration"
   cp /calibre-web/dockerinit/metadata_db_prefs_backup.json /books/metadata_db_prefs_backup.json
+fi
+
+if [[ ! -r /books/metadata_db_prefs_backup.json ]]
+then
   chown "$PUSER:$PGROUP" /books/metadata_db_prefs_backup.json
 fi
 
