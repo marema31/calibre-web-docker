@@ -36,6 +36,7 @@ then
 fi
 echo "Changing configuration owner"
 chown -R "$PUSER:$PGROUP" /config
+chmod -R o+rwx /config
 if ! gosu calibre test -w /config/app.db -a -w /config/gdrive.db
 then
   echo "Error: Was not able to write config databases"
